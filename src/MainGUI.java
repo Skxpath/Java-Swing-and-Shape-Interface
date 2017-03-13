@@ -24,10 +24,10 @@ public class MainGUI {
 
         // Sample function showing use of Canvas and CanvasIcon.
         // Comment this out when you have later tests working.
-        frame.add(makeCanvasIcon());
+      //  frame.add(makeCanvasIcon());
 
         // Test routines to exercise Picture and the Shape classes.
-//		frame.add(makeRectanglesPicture());
+	frame.add(makeRectanglesPicture());
 //		frame.add(makeTrianglesPicture());
 //		frame.add(makeTextBoxesPicture());
 //		frame.add(makeMixedPicture());
@@ -78,18 +78,17 @@ public class MainGUI {
     }
 
 
-/*
     // //////////////////////////////////////////////////////////////////////////
     // Rectangle Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeRectanglesPicture() {
         PicturePanel picture = new PicturePanel("Rectangle Picture Test:", 60, 19);
-        testRectanglesRow1(picture);
-        testRectangleRow2(picture);
+     /*   testRectanglesRow1(picture);
+        testRectangleRow2(picture);*/
         return picture;
     }
 
-    private static void testRectanglesRow1(PicturePanel picture) {
+   /* private static void testRectanglesRow1(PicturePanel picture) {
         Rectangle r1 = new Rectangle(0, 0, 1, 1);
         r1.setColor(Color.MAGENTA);
         picture.addFront(r1);
@@ -131,9 +130,9 @@ public class MainGUI {
         r1.setColor(Color.GREEN);
         r1.setBorderChar('@');
         picture.addFront(r1);
-    }
+    }*/
 
-    // //////////////////////////////////////////////////////////////////////////
+   /* // //////////////////////////////////////////////////////////////////////////
     // Triangle Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeTrianglesPicture() {

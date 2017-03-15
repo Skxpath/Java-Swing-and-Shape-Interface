@@ -4,9 +4,8 @@ public abstract class ShapeImpl implements Shape {
 
     private final int xLocation;
     private final int yLocation;
-    private int width;
-    private int height;
-    private int size;
+    private final int width;
+    private final int height;
     private char borderChar;
     private Color color;
 
@@ -15,14 +14,6 @@ public abstract class ShapeImpl implements Shape {
         this.yLocation = yLocation;
         this.width = width;
         this.height = height;
-        this.color = Color.YELLOW;
-        this.borderChar = '*';
-    }
-
-    ShapeImpl(int xLocation, int yLocation, int size) {
-        this.xLocation = xLocation;
-        this.yLocation = yLocation;
-        this.size = size;
         this.color = Color.YELLOW;
         this.borderChar = '*';
     }
@@ -98,7 +89,4 @@ public abstract class ShapeImpl implements Shape {
 
     protected abstract boolean isBorder(int x, int y);
 
-    public int getSize() {
-        return size;
-    }
 }

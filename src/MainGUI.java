@@ -83,12 +83,12 @@ public class MainGUI {
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeRectanglesPicture() {
         PicturePanel picture = new PicturePanel("Rectangle Picture Test:", 60, 19);
-     /*   testRectanglesRow1(picture);
-        testRectangleRow2(picture);*/
+        testRectanglesRow1(picture);
+     //testRectangleRow2(picture);
         return picture;
     }
 
-   /* private static void testRectanglesRow1(PicturePanel picture) {
+   private static void testRectanglesRow1(PicturePanel picture) {
         Rectangle r1 = new Rectangle(0, 0, 1, 1);
         r1.setColor(Color.MAGENTA);
         picture.addFront(r1);
@@ -110,7 +110,7 @@ public class MainGUI {
         picture.addFront(r5);
     }
 
-    private static void testRectangleRow2(PicturePanel picture) {
+   /* private static void testRectangleRow2(PicturePanel picture) {
         final int ROW = 5;
         Rectangle r1 = new Rectangle(0, ROW, 5, 10);
         r1.setColor(Color.PINK);
@@ -129,7 +129,7 @@ public class MainGUI {
         r1 = new Rectangle(30, ROW, 14, 49);
         r1.setColor(Color.GREEN);
         r1.setBorderChar('@');
-        picture.addFront(r1);
+       picture.addFront(r1);
     }*/
 
    /* // //////////////////////////////////////////////////////////////////////////

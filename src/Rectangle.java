@@ -22,8 +22,9 @@ public class Rectangle extends ShapeImpl {
     protected boolean isBorder(int x, int y) {
         boolean isXBorder = ((getLocationX() <= x) && (x <= getLocationX() + getWidth())) && ((getLocationY() == y) || (y == getLocationY() + getHeight()));
         boolean isYBorder = ((getLocationY() <= y) && (y <= getLocationY() + getHeight())) && ((getLocationX() == x) || (x == getLocationX() + getWidth()));
+       boolean isStartBorder = ((x == getLocationX()) || (y == getLocationY()));
 
-        if (isXBorder || isYBorder) {
+        if (isXBorder || isYBorder || isStartBorder) {
             return true;
         } else {
             return false;

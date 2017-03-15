@@ -27,8 +27,8 @@ public class MainGUI {
       //  frame.add(makeCanvasIcon());
 
         // Test routines to exercise Picture and the Shape classes.
-	frame.add(makeRectanglesPicture());
-//		frame.add(makeTrianglesPicture());
+	//frame.add(makeRectanglesPicture());
+		frame.add(makeTrianglesPicture());
 //		frame.add(makeTextBoxesPicture());
 //		frame.add(makeMixedPicture());
 //		frame.add(makeFrontAndBackPicture());
@@ -84,7 +84,7 @@ public class MainGUI {
     private static PicturePanel makeRectanglesPicture() {
         PicturePanel picture = new PicturePanel("Rectangle Picture Test:", 60, 19);
         testRectanglesRow1(picture);
-     //testRectangleRow2(picture);
+     testRectangleRow2(picture);
         return picture;
     }
 
@@ -110,7 +110,7 @@ public class MainGUI {
         picture.addFront(r5);
     }
 
-   /* private static void testRectangleRow2(PicturePanel picture) {
+    private static void testRectangleRow2(PicturePanel picture) {
         final int ROW = 5;
         Rectangle r1 = new Rectangle(0, ROW, 5, 10);
         r1.setColor(Color.PINK);
@@ -130,9 +130,9 @@ public class MainGUI {
         r1.setColor(Color.GREEN);
         r1.setBorderChar('@');
        picture.addFront(r1);
-    }*/
+    }
 
-   /* // //////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////
     // Triangle Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeTrianglesPicture() {
@@ -195,7 +195,7 @@ public class MainGUI {
 
     }
 
-    // //////////////////////////////////////////////////////////////////////////
+    /*// //////////////////////////////////////////////////////////////////////////
     // TextBox Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeTextBoxesPicture() {
@@ -363,7 +363,7 @@ public class MainGUI {
         pic.addBack(textBack);
 
         return pic;
-    }*/
-
+    }*//*
+*/
 }
 

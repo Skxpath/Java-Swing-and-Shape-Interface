@@ -10,7 +10,7 @@ public class Rectangle extends ShapeImpl {
 
     @Override
     protected boolean isInside(int x, int y) {
-        boolean isInside = ((getLocationX() < x) && (x < (getLocationX() + getWidth() - 1))) && ((getLocationY() < y) && (x < (getLocationY() + getHeight() - 1)));
+        boolean isInside = ((getLocationX() < x) && (x < (getLocationX() + getWidth() - 1))) && ((getLocationY() < y) && (y < (getLocationY() + getHeight() - 1)));
         if (isInside) {
             return true;
         } else {
@@ -20,11 +20,15 @@ public class Rectangle extends ShapeImpl {
 
     @Override
     protected boolean isBorder(int x, int y) {
-        boolean isXBorder = ((getLocationX() <= x) && (x <= getLocationX() + getWidth())) && ((getLocationY() == y) || (y == getLocationY() + getHeight()));
-        boolean isYBorder = ((getLocationY() <= y) && (y <= getLocationY() + getHeight())) && ((getLocationX() == x) || (x == getLocationX() + getWidth()));
-       boolean isStartBorder = ((x == getLocationX()) || (y == getLocationY()));
+        boolean xBoundary = (getLocationX() <= x) && (x <= getLocationX() + getWidth());
+        boolean yBoundary = (getLocationY() <= y) && (y <= getLocationY() + getHeight());
 
-        if (isXBorder || isYBorder || isStartBorder) {
+        boolean isTopXBorder = (xBoundary) && ((getLocationY() == y) || (y == getLocationY() + getHeight()));
+        boolean isLeftYBorder = (yBoundary) && ((getLocationX() == x) || (x == getLocationX() + getWidth()));
+        boolean isBottomXBorder = (xBoundary) && (y == (getLocationY() + getHeight() - 1));
+        boolean isRightYBorder = (yBoundary) && (x == (getLocationX() + getWidth() - 1));
+
+        if (isTopXBorder || isLeftYBorder || isBottomXBorder || isRightYBorder) {
             return true;
         } else {
             return false;

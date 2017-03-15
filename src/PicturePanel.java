@@ -1,52 +1,56 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by Aria on 3/12/2017.
  */
 public class PicturePanel extends JPanel {
 
-    private String text;
-    private int width;
-    private int height;
 
- private JLabel headerLabel;
-    private JLabel canvasLabel;
-private Canvas canvas;
+    private Canvas canvas;
+    private ArrayList<Shape> shapeList = new ArrayList<>();
 
-   public PicturePanel (String text, int width, int height) {
-        this.text = text;
-        this.width = width;
-        this.height = height;
+    public PicturePanel(String text, int width, int height) {
+
+        JLabel headerLabel;
+        JLabel canvasLabel;
 
         this.setLayout(new BorderLayout());
 
-       char[] charArray = text.toCharArray();
+        // char[] charArray = text.toCharArray();
 
-       canvas = new Canvas(width, height);
+        canvas = new Canvas(width, height);
 
-     /*  Rectangle r1 = new Rectangle(1, 1, 4, 4);;
-       r1.setColor(Color.MAGENTA);
-       r1.draw(canvas);*/
+        CanvasIcon cIcon = new CanvasIcon(canvas);
 
-       CanvasIcon cIcon = new CanvasIcon(canvas);
+        headerLabel = new JLabel(text);
+        canvasLabel = new JLabel(cIcon);
 
-       headerLabel = new JLabel(text);
-       canvasLabel = new JLabel(cIcon);
+        this.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
 
-       this.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
-
-add(headerLabel,BorderLayout.NORTH);
-add(canvasLabel);
+        add(headerLabel, BorderLayout.NORTH);
+        add(canvasLabel);
 
     }
 
     public void addFront(Shape shape) {
-shape.draw(canvas);
+        shapeList.add(shape);
+
+        drawShapes();
     }
 
-    public void addBack(Shape shape) {
 
+    public void addBack(Shape shape) {
+        shapeList.add(0, shape);
+
+        drawShapes();
+    }
+
+    private void drawShapes() {
+        for (Shape s : shapeList) {
+            s.draw(canvas);
+        }
     }
 
 }

@@ -18,8 +18,6 @@ public class PicturePanel extends JPanel {
 
         this.setLayout(new BorderLayout());
 
-        // char[] charArray = text.toCharArray();
-
         canvas = new Canvas(width, height);
 
         CanvasIcon cIcon = new CanvasIcon(canvas);

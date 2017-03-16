@@ -71,6 +71,17 @@ public abstract class ShapeImpl implements Shape {
         }
     }
 
+    protected void drawBorder(Canvas canvas) {
+        for (int x = getLocationX(); x <= getLocationX() + getWidth() - 1; x++) {
+            for (int y = getLocationY(); y <= getLocationY() + getHeight() - 1; y++) {
+                if (isBorder(x, y)) {
+                    canvas.setPointColor(x, y, getColor());
+                    canvas.setPointText(x, y, getBorderChar());
+                }
+            }
+        }
+    }
+
     protected abstract boolean isInside(int x, int y);
 
     protected abstract boolean isBorder(int x, int y);

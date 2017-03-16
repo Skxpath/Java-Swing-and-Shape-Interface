@@ -199,7 +199,7 @@ public class MainGUI {
     private static PicturePanel makeTextBoxesPicture() {
         PicturePanel picture = new PicturePanel("Text Box Test:", SIZE_X, SIZE_Y);
         testTextBoxRow1(picture);
-       // testTextBoxRow2(picture);
+        testTextBoxRow2(picture);
         return picture;
     }
 
@@ -208,15 +208,15 @@ public class MainGUI {
         tb1.setColor(Color.CYAN);
         picture.addFront(tb1);
 
-/*        tb1 = new TextBox(0, 5, 16, 3, "Hello world!");
+       tb1 = new TextBox(0, 5, 16, 3, "Hello world!");
         tb1.setColor(Color.RED);
-        picture.addFront(tb1);*/
+        picture.addFront(tb1);
 
        TextBox tb2 = new TextBox(20, 0, 9, 9,
                 "And so it began, the great debugging!");
         tb2.setColor(Color.GREEN);
         picture.addFront(tb2);
-/*
+
         // Code Monkey Lyrics, by Jonathan Coulton
         // See: http://www.youtube.com/watch?v=qYodWEKCuGg
         TextBox tb3 = new TextBox(
@@ -239,7 +239,7 @@ public class MainGUI {
         TextBox tb4 = new TextBox(65, 5, 13, 10,
                 "And there was much rejoicing!");
         tb4.setColor(Color.ORANGE);
-        picture.addFront(tb4);*/
+        picture.addFront(tb4);
     }
 
     private static void testTextBoxRow2(PicturePanel picture) {

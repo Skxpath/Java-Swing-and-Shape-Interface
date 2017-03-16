@@ -1,5 +1,6 @@
 /**
- * Created by Aria on 3/14/2017.
+ * Triangle class which contains
+ * code to draw a Triangle
  */
 
 public class Triangle extends ShapeImpl {

@@ -26,9 +26,9 @@ public class MainGUI {
         // Test routines to exercise Picture and the Shape classes.
         //frame.add(makeRectanglesPicture());
         //frame.add(makeTrianglesPicture());
-        frame.add(makeTextBoxesPicture());
-//	frame.add(makeMixedPicture());
-//		frame.add(makeFrontAndBackPicture());
+     //   frame.add(makeTextBoxesPicture());
+	//frame.add(makeMixedPicture());
+		frame.add(makeFrontAndBackPicture());
 
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -193,7 +193,7 @@ public class MainGUI {
 
     }
 
-    /*//*/ //////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////
     // TextBox Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeTextBoxesPicture() {

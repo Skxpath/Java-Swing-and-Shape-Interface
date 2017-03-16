@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * Shape interface
+ */
 interface Shape {
     int getLocationX();
     int getLocationY();

@@ -1,5 +1,9 @@
 import java.awt.*;
 
+/**
+ * ShapeImpl class which
+ * implements the methods of Shape
+ */
 public abstract class ShapeImpl implements Shape {
 
     private final int xLocation;
@@ -52,14 +56,14 @@ public abstract class ShapeImpl implements Shape {
 
     public void draw(Canvas canvas) {
 
-        //General cases
         drawCanvas(canvas);
 
     }
 
+    //Draws on the canvas
     protected void drawCanvas(Canvas canvas) {
-        for (int x = getLocationX(); x <= getLocationX()+getWidth()-1; x++) {
-            for (int y = getLocationY(); y <= getLocationY()+getHeight()-1; y++) {
+        for (int x = getLocationX(); x <= getLocationX() + getWidth() - 1; x++) {
+            for (int y = getLocationY(); y <= getLocationY() + getHeight() - 1; y++) {
                 if (isBorder(x, y)) {
                     canvas.setPointColor(x, y, getColor());
                     canvas.setPointText(x, y, getBorderChar());
@@ -71,6 +75,7 @@ public abstract class ShapeImpl implements Shape {
         }
     }
 
+    //Redraws the border of a shape
     protected void drawBorder(Canvas canvas) {
         for (int x = getLocationX(); x <= getLocationX() + getWidth() - 1; x++) {
             for (int y = getLocationY(); y <= getLocationY() + getHeight() - 1; y++) {

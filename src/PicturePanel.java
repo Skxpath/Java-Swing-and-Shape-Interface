@@ -3,7 +3,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Created by Aria on 3/12/2017.
+ * PicturePanel class which extends JPanel
+ * and provides display functionality
+ * to the GUI.
  */
 public class PicturePanel extends JPanel {
 

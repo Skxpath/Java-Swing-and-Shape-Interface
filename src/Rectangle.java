@@ -1,5 +1,7 @@
 /**
- * Created by Aria on 3/12/2017.
+ * Rectangle class which
+ * contains code to
+ * draw a rectangle
  */
 
 public class Rectangle extends ShapeImpl {

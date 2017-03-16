@@ -52,25 +52,12 @@ public abstract class ShapeImpl implements Shape {
 
     public void draw(Canvas canvas) {
 
-     /*   //Starting point
-        canvas.setPointColor(getLocationX(), getLocationY(), getColor());
-        canvas.setPointText(getLocationX(), getLocationY(), getBorderChar());
-
-        //Edge cases
-     *//*   if (getWidth() > 1) {
-            canvas.setPointColor(getLocationX() + getWidth()-1, getLocationY(), getColor());
-            canvas.setPointText(getLocationX() + getWidth()-1, getLocationY(), getBorderChar());
-        }
-        if (getHeight() > 1) {
-            canvas.setPointColor(getLocationX(), getLocationY() + getHeight()-1, getColor());
-            canvas.setPointText(getLocationX(), getLocationY() + getHeight()-1, getBorderChar());
-        }
-        if ((getWidth() > 1) && (getHeight() > 1)) {
-            canvas.setPointColor(getLocationX() + getWidth()-1, getLocationY() + getHeight()-1, getColor());
-            canvas.setPointText(getLocationX() + getWidth()-1, getLocationY() + getHeight()-1, getBorderChar());
-        }*/
-
         //General cases
+        drawCanvas(canvas);
+
+    }
+
+    protected void drawCanvas(Canvas canvas) {
         for (int x = getLocationX(); x <= getLocationX()+getWidth()-1; x++) {
             for (int y = getLocationY(); y <= getLocationY()+getHeight()-1; y++) {
                 if (isBorder(x, y)) {
@@ -82,7 +69,6 @@ public abstract class ShapeImpl implements Shape {
                 }
             }
         }
-
     }
 
     protected abstract boolean isInside(int x, int y);

@@ -1,5 +1,10 @@
-import javax.swing.*;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 
 /**
@@ -21,14 +26,14 @@ public class MainGUI {
 
         // Sample function showing use of Canvas and CanvasIcon.
         // Comment this out when you have later tests working.
-        //  frame.add(makeCanvasIcon());
+        frame.add(makeCanvasIcon());
 
         // Test routines to exercise Picture and the Shape classes.
-        //frame.add(makeRectanglesPicture());
-        //frame.add(makeTrianglesPicture());
-     //   frame.add(makeTextBoxesPicture());
-	//frame.add(makeMixedPicture());
-		frame.add(makeFrontAndBackPicture());
+//		frame.add(makeRectanglesPicture());
+//		frame.add(makeTrianglesPicture());
+//		frame.add(makeTextBoxesPicture());
+//		frame.add(makeMixedPicture());
+//		frame.add(makeFrontAndBackPicture());
 
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,10 +42,9 @@ public class MainGUI {
 
     /**
      * Demonstrate the Canvas class and the CanvasIcon and how to put it into the UI
-     * - Use a Canvas to "draw" some items.
-     * - Use a CanvasIcon to render the Canvas in a graphical form.
-     * - Use a JLabel to make it a component that can be easily added to the UI.
-     *
+     *  - Use a Canvas to "draw" some items.
+     *  - Use a CanvasIcon to render the Canvas in a graphical form.
+     *  - Use a JLabel to make it a component that can be easily added to the UI.
      * @return A JLabel holding an icon to addFront to the UI.
      */
     private static Component makeCanvasIcon() {
@@ -50,7 +54,7 @@ public class MainGUI {
         // Draw characters onto the canvas
         canvas.setPointText(0, 0, 'S');
         canvas.setPointText(1, 1, '!');
-        canvas.setPointText(canvas.getSizeX() - 1, canvas.getSizeY() - 1, 'B');
+        canvas.setPointText(canvas.getSizeX()-1, canvas.getSizeY()-1, 'B');
 
         // Setting colours in the canvas
         for (int i = 0; i < 5; i++) {
@@ -62,7 +66,7 @@ public class MainGUI {
         for (int i = 0; i < 5; i++) {
             int pos = i + 9;
             canvas.setPointColor(pos, pos, Color.YELLOW);
-            canvas.setPointText(pos, pos, (char) ('A' + i));
+            canvas.setPointText(pos, pos, (char)('A' + i));
         }
 
         // Trying to draw off the canvas is just ignored
@@ -74,6 +78,7 @@ public class MainGUI {
         CanvasIcon icon = new CanvasIcon(canvas);
         return new JLabel(icon);
     }
+
 
 
     // //////////////////////////////////////////////////////////////////////////
@@ -193,7 +198,7 @@ public class MainGUI {
 
     }
 
-    /////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////
     // TextBox Test
     // //////////////////////////////////////////////////////////////////////////
     private static PicturePanel makeTextBoxesPicture() {
@@ -208,11 +213,11 @@ public class MainGUI {
         tb1.setColor(Color.CYAN);
         picture.addFront(tb1);
 
-       tb1 = new TextBox(0, 5, 16, 3, "Hello world!");
+        tb1 = new TextBox(0, 5, 16, 3, "Hello world!");
         tb1.setColor(Color.RED);
         picture.addFront(tb1);
 
-       TextBox tb2 = new TextBox(20, 0, 9, 9,
+        TextBox tb2 = new TextBox(20, 0, 9, 9,
                 "And so it began, the great debugging!");
         tb2.setColor(Color.GREEN);
         picture.addFront(tb2);
@@ -355,12 +360,12 @@ public class MainGUI {
         pic.addBack(triRight);
 
         // Text in very back:
-        TextBox textBack = new TextBox(10, 1, SIZE_X - 20, SIZE_Y - 2, "Aww drat, I'm at the back.");
+        TextBox textBack = new TextBox(10, 1, SIZE_X-20, SIZE_Y-2, "Aww drat, I'm at the back.");
         textBack.setColor(Color.YELLOW);
         textBack.setBorderChar('O');
         pic.addBack(textBack);
 
         return pic;
     }
-}
 
+}
